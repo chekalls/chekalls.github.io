@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Référence - Gestion des profils (Utilisateur & Administrateur)</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2 { color: #333; }
+    section { margin-bottom: 2em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background-color: #f5f5f5; }
+    code { background: #f0f0f0; padding: 2px 4px; font-size: 90%; }
+  </style>
+</head>
+<body>
+  <h1>Référence - Gestion des profils</h1>
+  <p>Page de documentation statique présentant les écrans et flux pour la gestion des profils côté client (utilisateur) et côté administrateur/modérateur. Conçue comme un guide de référence ou maquette côté frontend.</p>
+
+  <section id="user-profile">
+    <h2>Utilisateur (propriétaire de profil)</h2>
+    <h3>Écran d'édition</h3>
+    <ul>
+      <li>Formulaire affichant les champs du profil :</li>
+      <ul>
+        <li>Nom complet (non modifiable)</li>
+        <li>Bio, formation, expériences, compétences, spécialités, contacts (téléphone, LinkedIn, etc.)</li>
+      </ul>
+      <li>Pour chaque champ, une case à cocher "rendre public" ou "privé".</li>
+      <li>Bouton <code>Sauvegarder</code> en bas, qui déclenche un <code>PUT /profiles/{id}</code>.</li>
+      <li>Bouton <code>Prévisualiser</code> qui affiche la version publique (flux <code>GET /profiles/{id}</code>).</li>
+      <li>Validation serveur : longueurs, formats, pas de HTML.</li>
+      <li>En cas d'erreur, le même écran réaffiche le formulaire avec messages d'erreur en rouge.</li>
+    </ul>
+
+    <h3>Écran de visualisation publique</h3>
+    <p>Affiche uniquement les champs marqués publics. Les champs privés sont masqués ou remplacés par "(privé)".</p>
+    <p>Inclut un lien "Modifier mon profil" visible uniquement pour le propriétaire.</p>
+  </section>
+
+  <section id="admin-profile">
+    <h2>Administrateur / Modérateur</h2>
+    <h3>Vue de modération</h3>
+    <ul>
+      <li>Panel de recherche (annuaire) qui ouvre les profils publics.</li>
+      <li>Lorsqu'un profil est ouvert, boutons supplémentaires :</li>
+      <ul>
+        <li><code>Suspendre</code> / <code>Bannir</code> l'utilisateur (envoie un signal à <code>POST /users/{id}/suspend</code> ou similaire).</li>
+        <li><code>Modifier</code> : accès à un formulaire similaire à celui du propriétaire, mais pouvant éditer tous les champs.</li>
+      </ul>
+      <li>Modification entraîne création d'une entrée d'audit (modérateur, champs modifiés, timestamp).</li>
+    </ul>
+
+    <h3>Liste des profils marqués publics</h3>
+    <p>Tableau des utilisateurs avec colonnes :</p>
+    <table>
+      <tr><th>Nom</th><th>Promotion</th><th>Spécialités</th><th>Entreprise</th><th>Statut</th><th>Actions</th></tr>
+      <tr><td>Jean Dupont</td><td>2019</td><td>Java, DevOps</td><td>ACME</td><td>Actif</td><td><button>Voir</button> <button>Suspendre</button></td></tr>
+      <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>Référence générée automatiquement - ne contient aucun code exécutable.</p>
+  </footer>
+</body>
+</html>
