@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Créer une Offre</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 4px; }
+    button { margin-top: 12px; padding: 8px 16px; }
+  </style>
+</head>
+<body>
+  <h1>Créer une nouvelle offre</h1>
+  
+  <form>
+    <label>Titre de l'offre
+      <input type="text" name="title" placeholder="ex: Développeur Java Senior">
+    </label>
+    <label>Entreprise
+      <input type="text" name="company" placeholder="ACME">
+    </label>
+    <label>Type
+      <select name="type">
+        <option>Emploi</option>
+        <option>Stage</option>
+      </select>
+    </label>
+    <label>Localisation
+      <input type="text" name="location" placeholder="Paris">
+    </label>
+    <label>Salaire (optionnel)
+      <input type="text" name="salary" placeholder="45k - 55k €/an">
+    </label>
+    <label>Description
+      <textarea name="description" rows="6" placeholder="Décrivez l'offre..."></textarea>
+    </label>
+    <button type="submit">Publier</button>
+    <button type="reset">Annuler</button>
+  </form>
+
+  <footer>
+    <p>Exemple statique : formulaire non-fonctionnel.</p>
+  </footer>
+</body>
+</html>
