@@ -10,12 +10,17 @@
     input, select { width: 100%; padding: 8px; margin-top: 4px; }
     button { margin-top: 12px; padding: 8px 16px; }
   </style>
+<script>
+  function showResults() {
+    document.getElementById('results').style.display = 'block';
+  }
+</script>
 </head>
 <body>
   <h1>Annuaire Intelligent - Recherche</h1>
-  <p>Maquette du formulaire de recherche multicritères.</p>
+  <p>Maquette du formulaire de recherche multicritères et affichage des résultats sur la même page.</p>
 
-  <form>
+  <form id="searchForm">
     <label>Nom ou prénom
       <input type="text" name="name" placeholder="Jean Dupont">
     </label>
@@ -35,11 +40,30 @@
     <label>Secteur d'activité
       <input type="text" name="sector" placeholder="Informatique">
     </label>
-    <button type="submit">Rechercher</button>
+    <button type="button" onclick="showResults()">Rechercher</button>
   </form>
 
+  <section id="filters">
+    <h2>Filtres disponibles</h2>
+    <ul>
+      <li>Spécialités : Java, DevOps, Cybersécurité, UX Design</li>
+      <li>Entreprises : ACME, SecureCorp, DataTech</li>
+      <li>Secteurs : Informatique, Sécurité, FinTech</li>
+    </ul>
+  </section>
+
+  <section id="results">
+    <h2>Résultats de recherche</h2>
+    <table>
+      <tr><th>Nom</th><th>Promotion</th><th>Spécialités</th><th>Entreprise</th><th>Secteur</th></tr>
+      <tr><td>Jean Dupont</td><td>2019</td><td>Java, DevOps</td><td>ACME</td><td>Informatique</td></tr>
+      <tr><td>Jane Martin</td><td>2021</td><td>Cybersécurité</td><td>SecureCorp</td><td>Sécurité</td></tr>
+    </table>
+    <p><em>Pagination : &lt; Précédent | 1 | 2 | Suivant &gt;</em></p>
+  </section>
+
   <footer>
-    <p>Exemple statique : champs non-fonctionnels.</p>
+    <p>Exemple statique : tout se trouve sur la même page, aucun comportement réel.</p>
   </footer>
 </body>
 </html>
