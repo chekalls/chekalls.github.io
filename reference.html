@@ -27,7 +27,7 @@
         <li>Bio, formation, expériences, compétences, spécialités, contacts (téléphone, LinkedIn, etc.)</li>
       </ul>
       <li>Pour chaque champ, une case à cocher "rendre public" ou "privé".</li>
-      <li>Bouton <code>Sauvegarder</code> en bas, qui déclenche un <code>PUT /profiles/{id}</code>.</li>
+      <li>Bouton <code>Sauvegarder</code> en bas, qui déclenche un <code>POST /profiles/{id}</code>.</li>
       <li>Bouton <code>Prévisualiser</code> qui affiche la version publique (flux <code>GET /profiles/{id}</code>).</li>
       <li>Validation serveur : longueurs, formats, pas de HTML.</li>
       <li>En cas d'erreur, le même écran réaffiche le formulaire avec messages d'erreur en rouge.</li>
