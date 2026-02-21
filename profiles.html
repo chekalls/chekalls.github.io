@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple - Liste des profils / Moderation</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2 { color: #333; }
+    table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background-color: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <h1>Exemple - Liste des profils (administrateur/modérateur)</h1>
+  <p>Écran principal utilisé par un modérateur pour parcourir les profils publics et agir sur eux.</p>
+
+  <h2>Vue de modération</h2>
+  <ul>
+    <li>Panel de recherche (annuaire) qui ouvre les profils publics.</li>
+    <li>Lorsqu'un profil est ouvert, boutons supplémentaires :</li>
+    <ul>
+      <li><code>Suspendre</code> / <code>Bannir</code> l'utilisateur.</li>
+      <li><code>Modifier</code> : accès à un formulaire complet.</li>
+    </ul>
+    <li>Modification entraîne création d'une entrée d'audit.</li>
+  </ul>
+
+  <h2>Tableau d'exemple</h2>
+  <table>
+    <tr><th>Nom</th><th>Promotion</th><th>Spécialités</th><th>Entreprise</th><th>Statut</th><th>Actions</th></tr>
+    <tr><td>Jean Dupont</td><td>2019</td><td>Java, DevOps</td><td>ACME</td><td>Actif</td><td><button>Voir</button> <button>Suspendre</button></td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  </table>
+
+  <footer>
+    <p>Exemple statique : interface démonstrative pour la liste/modération de profils.</p>
+  </footer>
+</body>
+</html>

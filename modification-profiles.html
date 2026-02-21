@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple - Modification de profil</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2 { color: #333; }
+    code { background: #f0f0f0; padding: 2px 4px; font-size: 90%; }
+  </style>
+</head>
+<body>
+  <h1>Exemple - Écran de modification de profil</h1>
+  <p>Maquette d'un formulaire permettant à un utilisateur (ou un administrateur) de modifier un profil.</p>
+
+  <h2>Structure du formulaire</h2>
+  <ul>
+    <li>Champs visibles :</li>
+    <ul>
+      <li>Nom complet (non modifiable)</li>
+      <li>Bio, formation, expériences, compétences, spécialités, contacts (téléphone, LinkedIn, etc.)</li>
+    </ul>
+    <li>Case à cocher "rendre public" ou "privé" pour chaque champ.</li>
+    <li>Bouton <code>Sauvegarder</code> déclenchant <code>PUT /profiles/{id}</code>.</li>
+    <li>Bouton <code>Prévisualiser</code> affichant la version publique (<code>GET /profiles/{id}</code>).</li>
+    <li>En cas d'erreur, le formulaire est réaffiché avec des messages rouges.</li>
+  </ul>
+
+  <footer>
+    <p>Page exemple : aucune fonctionnalité dynamique, structure uniquement.</p>
+  </footer>
+</body>
+</html>
