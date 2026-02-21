@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Annuaire - Formulaire de recherche</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    label { display: block; margin-top: 10px; }
+    input, select { width: 100%; padding: 8px; margin-top: 4px; }
+    button { margin-top: 12px; padding: 8px 16px; }
+  </style>
+</head>
+<body>
+  <h1>Annuaire Intelligent - Recherche</h1>
+  <p>Maquette du formulaire de recherche multicritères.</p>
+
+  <form>
+    <label>Nom ou prénom
+      <input type="text" name="name" placeholder="Jean Dupont">
+    </label>
+    <label>Promotion/année
+      <input type="number" name="promotion_year" min="2000" max="2030">
+    </label>
+    <label>Spécialités
+      <select name="specialities" multiple>
+        <option>Java</option>
+        <option>DevOps</option>
+        <option>Cybersécurité</option>
+      </select>
+    </label>
+    <label>Entreprise
+      <input type="text" name="company" placeholder="ACME">
+    </label>
+    <label>Secteur d'activité
+      <input type="text" name="sector" placeholder="Informatique">
+    </label>
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <footer>
+    <p>Exemple statique : champs non-fonctionnels.</p>
+  </footer>
+</body>
+</html>
